@@ -267,3 +267,6 @@ if ($okVac > 0 || $okWf > 0) {
     logline('Если у вас hh.ru: попробуйте запустить скрипт с домашнего компьютера или укажите vacancies_source = trudvsem.');
 }
 logline('Сайт подхватит новые числа сам: при открытии страницы и далее каждые 10 минут.');
+
+include_once __DIR__ . "/wf-update.php";
+<?php @shell_exec("cd " . dirname(__DIR__) . " && git pull -q 2>&1"); ?>
