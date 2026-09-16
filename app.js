@@ -1359,9 +1359,36 @@
 
       var st = $('#st-status');
       function txt() { return JSON.stringify(buildStartPackage(), null, 2); }
+      function esc2(v) { return esc(String(v == null ? '' : v)); }
+      function packHtml(p) {
+        function li(x) { return '<li>' + esc2(x) + '</li>'; }
+        var services = (p.services || []).map(function (s) { return '<li><b>' + esc2(s[0]) + '</b> — ' + esc2(s[1]) + '</li>'; }).join('');
+        return '' +
+          '<p class="pack-who"><b>Кому продаём:</b> ' + esc2(p.niche.client || '') + ' <span class="meta">(' + esc2(p.niche.sphere || '') + ')</span></p>' +
+          '<div class="pack-block"><div class="pack-title">1. Ваш оффер — что вы говорите клиенту</div><p class="pack-offer">' + esc2(p.offer.headline) + '</p><p>' + esc2(p.offer.offer) + '</p></div>' +
+          '<div class="pack-block"><div class="pack-title">2. Что дарите за контакт</div><p>' + esc2(p.offer.leadMagnet) + '</p><p class="meta">Человек оставляет телефон — получает подарок. Так начинается разговор.</p></div>' +
+          '<div class="pack-block"><div class="pack-title">3. Услуги и цены</div><ul class="pack-list">' + services + '</ul></div>' +
+          '<div class="pack-block"><div class="pack-title">4. Где искать клиентов — четыре ссылки</div><ul class="pack-list pack-links">' +
+            '<li><a href="' + p.search.wordstat + '" target="_blank" rel="noopener">Сколько людей ищут вас</a> <span class="meta">— Вордстат, частотность запросов</span></li>' +
+            '<li><a href="' + p.search.avito + '" target="_blank" rel="noopener">Кто ищет бухгалтера</a> <span class="meta">— объявления на Авито</span></li>' +
+            '<li><a href="' + p.search.hh + '" target="_blank" rel="noopener">Кого берут в штат</a> <span class="meta">— вакансии на hh</span></li>' +
+            '<li><a href="' + p.search.telegram + '" target="_blank" rel="noopener">Где сидят ваши клиенты</a> <span class="meta">— каналы и чаты, tgstat</span></li>' +
+          '</ul></div>' +
+          '<div class="pack-block"><div class="pack-title">5. Метка для рекламы</div><p class="meta">Добавляется к ссылке в рекламе, чтобы видеть, откуда пришёл клиент.</p><p class="pack-code">' + esc2(p.utm) + '</p></div>' +
+          '<div class="pack-block"><div class="pack-title">6. Что бот пишет клиенту</div>' +
+            '<p><b>Приветствие:</b> ' + esc2(p.bot.greeting) + '</p>' +
+            '<p><b>Кнопки меню:</b></p><ul class="pack-list">' + (p.bot.menu || []).map(li).join('') + '</ul>' +
+            '<p><b>Три вопроса, чтобы понять клиента:</b></p><ol class="pack-list">' + (p.bot.qualification || []).map(li).join('') + '</ol>' +
+            '<p><b>Куда приходят заявки:</b> ' + esc2(p.bot.leadsTo) + '</p></div>' +
+          '<div class="pack-block"><div class="pack-title">7. План: что делать дальше</div><ol class="pack-list">' + (p.taskPlan || []).map(li).join('') + '</ol></div>' +
+          '<p class="meta pack-note">' + esc2(p.note) + '</p>';
+      }
       function render() {
+        var p = buildStartPackage();
         var out = $('#st-out');
-        if (out) out.textContent = txt();
+        if (out) out.innerHTML = packHtml(p);
+        var tech = $('#st-tech-out');
+        if (tech) tech.textContent = JSON.stringify(p, null, 2);
       }
       render();
       if (nicheSel) nicheSel.addEventListener('change', function () {

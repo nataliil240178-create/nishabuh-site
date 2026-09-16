@@ -55,7 +55,7 @@
           <div class="section-head">
             <p class="eyebrow">Мастер</p>
             <h2>Соберите стартовый пакет за один клик</h2>
-            <p class="lead" style="margin-top: 16px;">Выберите нишу — сайт соберёт всё для старта: оффер, лид-магнит, услуги с ценами, ссылки поиска клиентов, UTM-метку и конфигурацию бота. Скачайте одним файлом.</p>
+            <p class="lead" style="margin-top: 16px;">Выберите нишу — и сайт за один клик соберёт <b>папку для старта</b>: что говорить клиентам, что подарить за контакт, сколько брать за услуги, где искать клиентов и что напишет бот. Ничего печатать не нужно — забирайте и работайте.</p>
           </div>
           <div class="grid-2">
             <div class="card">
@@ -65,15 +65,15 @@
               </div>
               <div class="step-actions">
                 <button type="button" class="btn btn-primary" id="st-build">Собрать пакет</button>
-                <button type="button" class="btn btn-secondary" id="st-download">Скачать start-package.json</button>
-                <button type="button" class="btn btn-secondary" id="st-copy">Скопировать пакет</button>
+                <button type="button" class="btn btn-secondary" id="st-download">Скачать файл для разработчика</button>
+                <button type="button" class="btn btn-secondary" id="st-copy">Скопировать весь текст</button>
               </div>
               <p class="meta" id="st-status" aria-live="polite" style="margin-top: 12px;"></p>
               <p class="niche-note">Пакет собирается в браузере и никуда не отправляется. Токены и пароли здесь не нужны.</p>
             </div>
             <div class="card">
-              <p class="out-label">Стартовый пакет</p>
-              <pre class="num" id="st-out" style="white-space: pre-wrap; word-break: break-word; font-size: 12.5px; margin: 8px 0 0; max-height: 420px; overflow: auto; background: var(--fg-soft); border-radius: var(--radius); padding: 14px;"></pre>
+              <p class="out-label">Вот ваш пакет — читайте сверху вниз</p>
+              <div class="pack" id="st-out"></div><details class="pack-tech"><summary>Показать технический вид (для разработчика)</summary><pre class="num pack-json" id="st-tech-out"></pre><p class="meta">Это тот же пакет, но в виде файла данных: его можно передать разработчику — он соберёт лендинг и бота без перепечатывания. Ничего не запускается и никуда не отправляется.</p></details>
             </div>
           </div>
         </div>

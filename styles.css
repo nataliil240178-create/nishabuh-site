@@ -902,3 +902,18 @@
     .side-foot { position: sticky; bottom: 0; background: var(--bg); padding-top: 10px; }
     .side-foot .theme-btn-inline { margin: 10px 0 0; }
   
+/* ── стартовый пакет: понятные блоки ───────────────────────── */
+.pack { max-height: 520px; overflow: auto; padding-right: 4px; }
+.pack-who { font-size: 15px; margin: 0 0 12px; }
+.pack-block { border-top: 1px solid var(--border, #e2e5ea); padding-top: 12px; margin-top: 12px; }
+.pack-block:first-of-type { border-top: 0; padding-top: 0; margin-top: 0; }
+.pack-title { font-family: var(--mono, monospace); font-size: 12px; letter-spacing: .04em; text-transform: uppercase; color: var(--muted, #667); margin-bottom: 6px; }
+.pack .pack-list { margin: 6px 0 0 18px; font-size: 15px; }
+.pack .pack-list li { margin: 4px 0; }
+.pack-links a { font-weight: 600; }
+.pack-offer { font-size: 16px; font-weight: 700; margin: 0 0 6px; }
+.pack-code { font-family: var(--mono, monospace); font-size: 12.5px; background: var(--fg-soft, #f1f3f6); border-radius: 8px; padding: 8px 10px; margin: 4px 0 0; word-break: break-all; }
+.pack-note { margin-top: 14px; }
+.pack-tech { margin-top: 14px; border-top: 1px dashed var(--border, #e2e5ea); padding-top: 10px; }
+.pack-tech summary { cursor: pointer; font-size: 14px; color: var(--muted, #667); }
+.pack-json { white-space: pre-wrap; word-break: break-word; font-size: 12px; max-height: 320px; overflow: auto; margin: 10px 0 6px; }
