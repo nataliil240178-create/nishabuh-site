@@ -853,9 +853,14 @@
           '<a class="p-link" style="margin: 0;" href="' + p.url + '" target="_blank" rel="noopener">' + esc(p.urlLabel) + ' ↗</a></div>';
       });
 
+      html += '<p class="niche-label" style="margin-top: 24px;">Выберите путь — что будете делать в этой нише</p>';
       html += '<div class="niche-cta">' +
-        '<a class="btn btn-secondary btn-sm btn-arrow" href="offer.html" data-niche="' + esc(n.id) + '" id="nm-to-offer">Собрать оффер для этой ниши</a>' +
-        '<a class="btn btn-ink btn-sm btn-arrow" href="feed.html" id="nm-to-feed">Заявки и живые поиски по этой нише</a>' +
+        '<a class="btn btn-primary btn-sm btn-arrow" href="napravlenie-1.html?niche=' + esc(n.id) + '">Направление 1 · искать клиентов самому</a>' +
+        '<a class="btn btn-ink btn-sm btn-arrow" href="napravlenie-2.html?niche=' + esc(n.id) + '">Направление 2 · заработать на партнёрках</a>' +
+        '</div>';
+      html += '<div class="niche-cta" style="margin-top: 8px;">' +
+        '<a class="btn btn-secondary btn-sm btn-arrow" href="offer.html" data-niche="' + esc(n.id) + '" id="nm-to-offer">Собрать оффер</a>' +
+        '<a class="btn btn-secondary btn-sm btn-arrow" href="feed.html" id="nm-to-feed">Заявки по этой нише</a>' +
         '</div>';
 
       $('#nm-body').innerHTML = html;
@@ -1543,7 +1548,20 @@
     }
 
     /* ── Запуск ─────────────────────────────────────────────── */
-    function init() {
+        function wireDirections() {
+      var banner = $('#dir-banner');
+      if (!banner) return;
+      var id = null;
+      try { id = new URLSearchParams(window.location.search).get('niche'); } catch (e) { id = null; }
+      var n = id ? findNiche(id) : null;
+      if (!n) return;
+      var nm = $('#dir-niche-name'); if (nm) nm.textContent = n.name;
+      var sp = $('#dir-niche-sphere'); if (sp) sp.textContent = n.sphere ? '· ' + n.sphere : '';
+      var to = $('#dir-to-offer'); if (to) to.setAttribute('data-niche', n.id);
+      var sel = $('#ctor-niche'); if (sel) sel.value = n.id;
+      banner.hidden = false;
+    }
+function init() {
       var page = document.body.getAttribute('data-page') || 'index';
       applyAppearance();
       wireAppearance();
@@ -1578,6 +1596,7 @@
       }
       if (page === 'start') {
         wireStart();
+      wireDirections();
       }
 
       /* автосинхронизация базы: без кнопок, общая для всех страниц */
