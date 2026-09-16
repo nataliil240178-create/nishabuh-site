@@ -1,0 +1,5 @@
+# данные обновляются на хостинге скриптами - их нельзя перезаписывать из репозитория
+nishabuh-data.json
+nishabuh-data.json.bak
+update-demand.config.php
+*.log

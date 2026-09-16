@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f2f2f2" />
+  <title>Боты и воронки · НишаБух</title>
+  <meta name="description" content="Боты и воронки: где делать бота, как подключить и настроить, плюс пять шагов воронки от лид-магнита до абонемента." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="bots">
+<header class="nav2 mob-only" id="top">
+  <div class="container nav2-top">
+    <a class="side-logo" href="index.html">НишаБух</a>
+    <nav class="nav2-depts" aria-label="Отделы сайта"><a class="dept-btn" href="start.html">Ниша</a><a class="dept-btn active" href="offer.html" aria-current="true">Упаковка</a><a class="dept-btn" href="feed.html">Привлечение</a><a class="dept-btn" href="plan.html">Работа</a></nav>
+    <span class="nav2-status"><span class="rate-dot js-sync-dot" title="Состояние автосинхронизации"></span></span>
+  </div>
+  <div class="container"><nav class="nav2-sections" aria-label="Разделы отдела «Упаковка»"><span class="sec-label">Разделы отдела</span><a class="sec-link" href="offer.html"><span class="sec-num">1</span>Конструктор оффера</a><a class="sec-link active" href="bots.html" aria-current="page"><span class="sec-num">2</span>Боты и воронки</a></nav></div>
+</header>
+
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar" aria-label="Отделы и разделы">
+    <a class="side-logo" href="index.html">НишаБух</a>
+    <span class="side-tag meta">навигатор для свободных бухгалтеров</span>
+    <nav class="side-nav" aria-label="Отделы сайта"><details class="side-group" name="side-nav"><summary class="side-dept"><span>Ниша</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="start.html"><span class="num-badge">1</span>Старт с нуля</a><a class="side-sec" href="niches.html"><span class="num-badge">2</span>Нишедатель</a></div></details><details class="side-group" name="side-nav" open><summary class="side-dept"><span>Упаковка</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="offer.html"><span class="num-badge">1</span>Конструктор оффера</a><a class="side-sec active" href="bots.html" aria-current="page"><span class="num-badge">2</span>Боты и воронки</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Привлечение</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="feed.html"><span class="num-badge">1</span>Заявки</a><a class="side-sec" href="ads.html"><span class="num-badge">2</span>Реклама и продвижение</a><a class="side-sec" href="partners.html"><span class="num-badge">3</span>Партнёрки</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Работа</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="plan.html"><span class="num-badge">1</span>План 30 дней</a></div></details></nav>
+    <div class="side-foot">
+      <div class="row" style="gap: 8px;"><span class="rate-dot js-sync-dot" title="Состояние автосинхронизации"></span></div>
+    </div>
+  </aside>
+
+  <div class="content">
+    <main id="content">
+      <div class="container"><nav class="crumbs" aria-label="Вы находитесь здесь"><span>Упаковка</span> <span class="sep" aria-hidden="true">→</span> <span aria-current="page">Боты и воронки</span></nav></div>
+      <div class="container"><div class="page-purpose"><p class="pp-text">Где делать бота и как его настроить: сравнение мессенджеров, шаги подключения, готовый конфиг файлом.</p><a class="btn btn-primary btn-sm" href="#bots-config">Собрать конфиг</a></div></div>
+
+      <section class="section" data-od-id="bots-hero">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Упаковка · боты</p>
+            <h2>Бот для заявок: в каком мессенджере делать и как подключить</h2>
+            <p class="lead" style="margin-top: 16px;">Бот собирает лиды из рекламы и чатов, выдаёт лид-магнит, задаёт три вопроса и записывает на диагностику. Ниже — сравнение мессенджеров, шаги подключения и конструктор настроек: соберите конфигурацию бота и заберите её файлом.</p>
+            <p class="meta" style="margin-top: 12px;">Важно честно: сам сайт-файл не может запускать бота — для работы нужен токен и сервер (или платформа ботов). Этот сайт готовит конфигурацию и инструкцию, с которыми запуск занимает один вечер.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="bots-messengers">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Выбор мессенджера</p>
+            <h2>Четыре площадки — под разные аудитории</h2>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h3 style="margin-bottom: 8px;">Telegram</h3>
+              <p class="faq-a" style="margin: 0 0 10px;">Самый быстрый старт: бот создаётся за 5 минут через <span class="num">@BotFather</span>, токен — сразу. Ссылка вида <span class="num">t.me/имя_бота</span>, QR-код, кнопки меню, без модерации.</p>
+              <ul class="svc">
+                <li><span>Где создать</span><span class="num">@BotFather</span></li>
+                <li><span>Что получить</span><span class="num">токен</span></li>
+                <li><span>Ограничения</span><span class="num">нет (лимиты платформы)</span></li>
+              </ul>
+              <p class="niche-note">Для бухгалтера: идеален для клиентов из чатов селлеров, у кого Telegram — рабочий инструмент.</p>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom: 8px;">WhatsApp</h3>
+              <p class="faq-a" style="margin: 0 0 10px;">Там, где клиенты «обычные предприниматели». Официальный путь — WhatsApp Business API через провайдера; есть правило 24 часов и шаблоны сообщений, поэтому сценарий проще и короче.</p>
+              <ul class="svc">
+                <li><span>Где создать</span><span class="num">WABA / провайдер</span></li>
+                <li><span>Что получить</span><span class="num">номер + токен</span></li>
+                <li><span>Ограничения</span><span class="num">шаблоны, 24 ч</span></li>
+              </ul>
+              <p class="niche-note">Для бухгалтера: подходит нишам с «нетехническими» клиентами — салоны, кофейни, сервисы.</p>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom: 8px;">ВКонтакте</h3>
+              <p class="faq-a" style="margin: 0 0 10px;">Бот живёт в сообществе: создаётся ключ API, подключается через сервисы. Плюс — лента сообщества сама собирает трафик, минус — меньше деловой аудитории.</p>
+              <ul class="svc">
+                <li><span>Где создать</span><span class="num">сообщество → API</span></li>
+                <li><span>Что получить</span><span class="num">ключ сообщества</span></li>
+                <li><span>Ограничения</span><span class="num">правила VK</span></li>
+              </ul>
+              <p class="niche-note">Для бухгалтера: локальные ниши — красота, автосервисы, ремонт; клиенты часто сидят в ВК.</p>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom: 8px;">MAX (мессенджер МАКС)</h3>
+              <p class="faq-a" style="margin: 0 0 10px;">Национальный мессенджер: аудитория растёт, у площадки есть бот-платформа и Bot API. Старт похож на Telegram — создать бота, получить токен, подключить к сервису или на сервер.</p>
+              <ul class="svc">
+                <li><span>Где создать</span><span class="num">бот-платформа MAX</span></li>
+                <li><span>Что получить</span><span class="num">токен бота</span></li>
+                <li><span>Ограничения</span><span class="num">правила платформы</span></li>
+              </ul>
+              <p class="niche-note">Для бухгалтера: ставка на будущее — конкурентов пока мало, бот в MAX выделит вас среди коллег. Актуальный порядок создания бота сверяйте в справке MAX.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="bots-connect">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Подключение</p>
+            <h2>Пять шагов — и бот принимает заявки</h2>
+          </div>
+          <div class="steps" style="grid-template-columns: repeat(5, 1fr);">
+            <div class="step-card">
+              <span class="step-num">01</span>
+              <h3>Создать бота</h3>
+              <p>В выбранном мессенджере: Telegram — @BotFather, WhatsApp — провайдер WABA, ВК — сообщество.</p>
+              <span class="step-tools">Результат: токен/ключ</span>
+            </div>
+            <div class="step-card">
+              <span class="step-num">02</span>
+              <h3>Подключить</h3>
+              <p>Вставить токен в платформу ботов (BotHelp, Salebot и аналоги) или на свой сервер. Токен — секрет, не публикуйте его.</p>
+              <span class="step-tools">Результат: бот отвечает</span>
+            </div>
+            <div class="step-card">
+              <span class="step-num">03</span>
+              <h3>Собрать сценарий</h3>
+              <p>Приветствие → лид-магнит → 3 вопроса квалификации → запись. Конфигурацию возьмите из конструктора ниже.</p>
+              <span class="step-tools">Результат: воронка готова</span>
+            </div>
+            <div class="step-card">
+              <span class="step-num">04</span>
+              <h3>Настроить приём заявок</h3>
+              <p>Куда падают лиды: ваш Telegram, почта, таблица или CRM (amoCRM, Битрикс24, 1С).</p>
+              <span class="step-tools">Результат: заявки не теряются</span>
+            </div>
+            <div class="step-card">
+              <span class="step-num">05</span>
+              <h3>Запустить</h3>
+              <p>Ссылка и QR в рекламе, чатах и на лендинге. Связка с разделом «Реклама»: цель кампаний — заявки в боте.</p>
+              <span class="step-tools">Результат: лиды идут</span>
+            </div>
+          </div>
+          <div class="card" style="margin-top: var(--gap-xl); padding: 12px 20px;">
+            <table class="ds-table">
+              <thead>
+                <tr><th>Мессенджер</th><th>Где создать бота</th><th>Что понадобится</th><th>Что учесть</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Telegram</td><td>@BotFather в Telegram</td><td>Токен бота</td><td>Проще всего; лимиты на рассылки — не спамить</td></tr>
+                <tr><td>WhatsApp</td><td>WhatsApp Business API через провайдера</td><td>Номер, подтверждение бизнеса, токен</td><td>Шаблоны сообщений, окно 24 часов</td></tr>
+                <tr><td>ВКонтакте</td><td>Сообщество → Управление → Работа с API</td><td>Ключ доступа сообщества</td><td>Правила VK к рассылкам</td></tr>
+                <tr><td>MAX</td><td>Бот-платформа MAX (в приложении)</td><td>Токен бота</td><td>Площадка новая: порядок и правила — в справке MAX</td></tr>
+                <tr><td>Веб-чат на сайте</td><td>Сервис чата или свой виджет</td><td>Код виджета на сайт</td><td>Хорош как дополнение к мессенджерам</td></tr>
+              </tbody>
+            </table>
+            <p class="niche-note">Платформы ботов и провайдеры берут абонентскую плату — тарифы проверяйте на их сайтах; на старте хватает бесплатных тарифов и пробных периодов.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="bots-config">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Настройки бота</p>
+            <h2>Соберите конфигурацию прямо на сайте</h2>
+            <p class="lead" style="margin-top: 16px;">Заполните поля — конструктор соберёт готовую конфигурацию бота: приветствие, лид-магнит, меню, квалификацию и приём заявок. Скачайте файлом или скопируйте — и перенесите в платформу ботов.</p>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <div class="field" style="margin-bottom: 14px;">
+                <label for="bx-messenger">Мессенджер</label>
+                <select class="input" id="bx-messenger">
+                  <option value="telegram">Telegram</option>
+                  <option value="whatsapp">WhatsApp</option>
+                  <option value="vk">ВКонтакте</option>
+                  <option value="max">MAX</option>
+                  <option value="webchat">Веб-чат на сайте</option>
+                </select>
+              </div>
+              <div class="field" style="margin-bottom: 14px;">
+                <label for="bx-niche">Ниша (подставит лид-магнит)</label>
+                <select class="input" id="bx-niche"></select>
+              </div>
+              <div class="field" style="margin-bottom: 14px;">
+                <label for="bx-name">Имя бота</label>
+                <input class="input" type="text" id="bx-name" placeholder="например, БухБот Натальи" />
+              </div>
+              <div class="field" style="margin-bottom: 14px;">
+                <label for="bx-greeting">Приветствие</label>
+                <textarea class="textarea" id="bx-greeting" placeholder="Здравствуйте! Я помогу навести порядок в учёте. Ответьте на три вопроса — пришлю разбор и запишу на бесплатную диагностику."></textarea>
+              </div>
+              <div class="field" style="margin-bottom: 14px;">
+                <label for="bx-lead">Лид-магнит (что даём в обмен на подписку)</label>
+                <select class="input" id="bx-lead"></select>
+              </div>
+              <div class="field" style="margin-bottom: 14px;">
+                <label for="bx-menu">Кнопки меню (по одной на строку)</label>
+                <textarea class="textarea" id="bx-menu" placeholder="Получить чек-лист&#10;Записаться на диагностику&#10;Задать вопрос"></textarea>
+              </div>
+              <div class="field" style="margin-bottom: 14px;">
+                <label for="bx-keywords">Ключевые слова входа (через запятую)</label>
+                <input class="input" type="text" id="bx-keywords" value="/start, бухгалтер, учёт" />
+              </div>
+              <div class="field" style="margin-bottom: 14px;">
+                <label for="bx-to">Куда присылать заявки</label>
+                <input class="input" type="text" id="bx-to" placeholder="@ваш_телеграм или почта" />
+              </div>
+              <div class="field">
+                <label for="bx-hours">Рабочие часы (когда бот зовёт на диагностику)</label>
+                <input class="input" type="text" id="bx-hours" value="будни, 10:00–19:00" />
+              </div>
+            </div>
+            <div>
+              <div class="card">
+                <p class="out-label">Готовая конфигурация (bot-config.json)</p>
+                <pre class="num" id="bx-out" style="white-space: pre-wrap; word-break: break-word; font-size: 12.5px; margin: 8px 0 0; max-height: 420px; overflow: auto; background: var(--fg-soft); border-radius: var(--radius); padding: 14px;"></pre>
+              </div>
+              <div class="row" style="gap: 10px; flex-wrap: wrap; margin-top: 16px;">
+                <button type="button" class="btn btn-primary" id="bx-download">Скачать bot-config.json</button>
+                <button type="button" class="btn btn-secondary" id="bx-copy">Скопировать</button>
+                <button type="button" class="btn btn-secondary" id="bx-save">Сохранить в браузере</button>
+              </div>
+              <p class="meta" id="bx-status" aria-live="polite" style="margin-top: 12px;"></p>
+              <p class="niche-note">Конфигурация — это текст сценария: его вставляют в платформу ботов или передают разработчику. Токены здесь не нужны и не запрашиваются — их храните только в личном кабинете платформы.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="bots-scenarios">
+        <div class="container">
+          <div class="section-head">
+            <p class="eyebrow">Сценарии</p>
+            <h2>Четыре сценария, которые приносят заявки</h2>
+          </div>
+          <div class="grid-2">
+            <div class="card">
+              <h3 style="margin-bottom: 8px;">1. Лид-магнит за контакт</h3>
+              <p class="faq-a" style="margin: 0;">Бот выдаёт чек-лист или памятку из карточки ниши — в обмен на контакт и согласие. Это первый шаг воронки из раздела «Воронка».</p>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom: 8px;">2. Квалификация в три вопроса</h3>
+              <p class="faq-a" style="margin: 0;">Режим налогообложения, оборот, есть ли касса/маркетплейсы. Ответы сразу показывают, какая услуга нужна, и отсекают нецелевых.</p>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom: 8px;">3. Запись на диагностику</h3>
+              <p class="faq-a" style="margin: 0;">Кнопка с датами и окном времени — 20 минут, бесплатно. Подтверждение и напоминание за час приходят автоматически.</p>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom: 8px;">4. Напоминания по календарю отчётности</h3>
+              <p class="faq-a" style="margin: 0;">Бот напоминает про сроки отчётности и взносов — повод вернуться к вам в нужный момент. Сезонный пик из раздела «Реклама».</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="bots-limits">
+        <div class="container">
+          <div class="grid-2">
+            <div class="card">
+              <h3 style="margin-bottom: 10px;">Что реально может этот сайт</h3>
+              <ul class="white-list">
+                <li>Сравнить мессенджеры и показать, что нужно для подключения.</li>
+                <li>Собрать конфигурацию бота и отдать её файлом — она готова к переносу.</li>
+                <li>Подставить лид-магнит выбранной ниши и связать бота с воронкой и рекламой.</li>
+              </ul>
+            </div>
+            <div class="card">
+              <h3 style="margin-bottom: 10px;">Что требует сервера/платформы</h3>
+              <ul class="white-list">
+                <li>Сам запуск бота: токен, вебхуки, хранение диалогов — это серверная часть.</li>
+                <li>Приём платежей, рассылки и интеграция с CRM по API.</li>
+                <li>Хранение токенов — только в кабинете платформы или в защищённых переменных сервера, не в файлах сайта.</li>
+              </ul>
+            </div>
+          </div>
+          <p class="niche-note" style="margin-top: 16px;">Следующий шаг по желанию: могу подготовить шаблон сценария под вашу нишу (тексты всех сообщений бота) и памятку «какие кнопки нажать» для BotFather и платформы ботов.</p>
+        </div>
+      </section>
+
+      <section class="section" data-od-id="bots-cta" style="text-align: center;">
+        <div class="container" style="max-width: 640px;">
+          <h2>Бот — это воронка без ручных ответов</h2>
+          <p class="lead" style="margin: 16px auto 32px;">Соберите конфигурацию выше, затем свяжите бота с рекламой и лентой заявок.</p>
+          <a class="btn btn-primary" href="ads.html">Перейти в «Реклама и продвижение»</a>
+        </div>
+      </section>
+
+<section class="section" id="funnel" data-od-id="funnel">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Упаковка · воронки</p>
+          <h2>Пять касаний от подписчика до абонемента</h2>
+          <p class="lead" style="margin-top: 16px;">Автоворонка снимает ручную продажу: клиент сам доходит от лид-магнита до записи на диагностику. Строится один раз — работает на каждую нишу.</p>
+        </div>
+        <div class="steps">
+          <div class="step-card">
+            <span class="step-num">01</span>
+            <h3>Трафик</h3>
+            <p>Профиль в Telegram, публикации в чатах ниши, партнёрские ссылки, рекомендации банков и 1С-франчайзи.</p>
+            <span class="step-tools">Инструменты: профиль + чаты ниши</span>
+          </div>
+          <div class="step-card">
+            <span class="step-num">02</span>
+            <h3>Лид-магнит</h3>
+            <p>Чек-лист или памятка под боль ниши — готовые идеи в каждой карточке нишедателя. Отдаёте за подписку.</p>
+            <span class="step-tools">Инструменты: бот, страница подписки</span>
+          </div>
+          <div class="step-card">
+            <span class="step-num">03</span>
+            <h3>Прогрев</h3>
+            <p>5–7 касаний: кейс, разбор ошибки, ответ на вопрос. Делает бот или рассылка — настраиваете цепочку один раз.</p>
+            <span class="step-tools">Инструменты: BotHelp, Salebot, рассылка</span>
+          </div>
+          <div class="step-card">
+            <span class="step-num">04</span>
+            <h3>Диагностика</h3>
+            <p>Бесплатная 20-минутная консультация по чек-листу находок. Вы показываете экспертизу — клиент видит цену проблемы.</p>
+            <span class="step-tools">Инструменты: ссылка на запись, календарь</span>
+          </div>
+          <div class="step-card">
+            <span class="step-num">05</span>
+            <h3>Продажа</h3>
+            <p>Аудит → пакет постановки → абонемент. Партнёрки добавляют второй доход с тех же клиентов.</p>
+            <span class="step-tools">Инструменты: тарифы, договор, CRM</span>
+          </div>
+        </div>
+        <div class="card" style="margin-top: var(--gap-xl); padding: 12px 20px;">
+          <table class="ds-table">
+            <thead>
+              <tr><th>Элемент воронки</th><th>Инструменты</th><th class="num-col">Старт</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Лендинг под нишу</td><td>Тильда, Craftum</td><td class="num-col">бесплатный тариф</td></tr>
+              <tr><td>Бот-воронка и прогрев</td><td>BotHelp, Salebot</td><td class="num-col">пробный период</td></tr>
+              <tr><td>Рассылка</td><td>Unisender, SendPulse</td><td class="num-col">бесплатные лимиты</td></tr>
+              <tr><td>Учёт сделок</td><td>Битрикс24, amoCRM</td><td class="num-col">бесплатный тариф</td></tr>
+              <tr><td>Запись на диагностику</td><td>Яндекс Календарь, Calendly</td><td class="num-col">бесплатно</td></tr>
+            </tbody>
+          </table>
+          <p class="niche-note">Тарифы сервисов меняются — проверяйте актуальные условия на сайтах перед подключением.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-od-id="next-step">
+      <div class="container">
+        <div class="next-card">
+          <span class="meta">Следующий шаг</span>
+          <h3>Заявки</h3>
+          <p>Лента «кто ищет бухгалтера»: нажмите карточку — откроется объявление.</p>
+          <div class="row"><a class="btn btn-primary" href="feed.html">Перейти к шагу</a><a class="btn btn-secondary" href="index.html">Вернуться в начало</a></div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+<footer class="pagefoot" data-od-id="footer">
+    <div class="container">
+      <div class="row-between">
+        <span>© НишаБух · 2026</span>
+        <span class="meta">Навигатор для свободных бухгалтеров</span>
+      </div>
+      <hr class="rule" style="margin: 20px 0;" />
+      <p style="margin: 0 0 10px; max-width: 90ch;">Конструктор собирает текстовую конфигурацию бота и работает прямо в браузере: ничего не отправляется в сеть. Токены ботов здесь не запрашиваются и не сохраняются. Запуск бота требует платформы или сервера — см. раздел выше.</p>
+    </div>
+  </footer>
+  </div>
+</div>
+<a class="to-top" href="#" aria-label="Наверх">↑</a>
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f2f2f2" />
+  <title>Заявки · НишаБух</title>
+  <meta name="description" content="Лента объявлений «кто ищет бухгалтера» и живые поиски по выбранной нише." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="feed">
+<header class="nav2 mob-only" id="top">
+  <div class="container nav2-top">
+    <a class="side-logo" href="index.html">НишаБух</a>
+    <nav class="nav2-depts" aria-label="Отделы сайта"><a class="dept-btn" href="start.html">Ниша</a><a class="dept-btn" href="offer.html">Упаковка</a><a class="dept-btn active" href="feed.html" aria-current="true">Привлечение</a><a class="dept-btn" href="plan.html">Работа</a></nav>
+    <span class="nav2-status"><span class="rate-dot js-sync-dot" title="Состояние автосинхронизации"></span></span>
+  </div>
+  <div class="container"><nav class="nav2-sections" aria-label="Разделы отдела «Привлечение»"><span class="sec-label">Разделы отдела</span><a class="sec-link active" href="feed.html" aria-current="page"><span class="sec-num">1</span>Заявки</a><a class="sec-link" href="ads.html"><span class="sec-num">2</span>Реклама и продвижение</a><a class="sec-link" href="partners.html"><span class="sec-num">3</span>Партнёрки</a></nav></div>
+</header>
+
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar" aria-label="Отделы и разделы">
+    <a class="side-logo" href="index.html">НишаБух</a>
+    <span class="side-tag meta">навигатор для свободных бухгалтеров</span>
+    <nav class="side-nav" aria-label="Отделы сайта"><details class="side-group" name="side-nav"><summary class="side-dept"><span>Ниша</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="start.html"><span class="num-badge">1</span>Старт с нуля</a><a class="side-sec" href="niches.html"><span class="num-badge">2</span>Нишедатель</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Упаковка</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="offer.html"><span class="num-badge">1</span>Конструктор оффера</a><a class="side-sec" href="bots.html"><span class="num-badge">2</span>Боты и воронки</a></div></details><details class="side-group" name="side-nav" open><summary class="side-dept"><span>Привлечение</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec active" href="feed.html" aria-current="page"><span class="num-badge">1</span>Заявки</a><a class="side-sec" href="ads.html"><span class="num-badge">2</span>Реклама и продвижение</a><a class="side-sec" href="partners.html"><span class="num-badge">3</span>Партнёрки</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Работа</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="plan.html"><span class="num-badge">1</span>План 30 дней</a></div></details></nav>
+    <div class="side-foot">
+      <div class="row" style="gap: 8px;"><span class="rate-dot js-sync-dot" title="Состояние автосинхронизации"></span></div>
+    </div>
+  </aside>
+
+  <div class="content">
+    <main id="content">
+      <div class="container"><nav class="crumbs" aria-label="Вы находитесь здесь"><span>Привлечение</span> <span class="sep" aria-hidden="true">→</span> <span aria-current="page">Заявки</span></nav></div>
+      <div class="container"><div class="page-purpose"><p class="pp-text">Объявления «кто ищет бухгалтера». Нажмите на карточку — откроется само объявление на площадке.</p><a class="btn btn-primary btn-sm" href="#feed">Открыть ленту</a></div></div>
+<section class="section" id="feed" data-od-id="feed">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Привлечение · лента заявок</p>
+          <h2>Кто ищет бухгалтера прямо сейчас</h2>
+          <p class="lead" style="margin-top: 16px;">Объявления и заявки по вашим нишам: нажмите на любое место карточки — откроется само объявление на площадке. Лента берётся из общей базы и синхронизируется автоматически — как только в базе появляются новые заявки, они показываются здесь.</p>
+        </div>
+
+        <div class="card">
+          <div class="controls">
+            <div class="field grow">
+              <label for="feed-search">Поиск по заявкам</label>
+              <input class="input" type="search" id="feed-search" placeholder="например, маркетплейс" />
+            </div>
+            <div class="field">
+              <label for="feed-niche">Ниша</label>
+              <select class="input" id="feed-niche"><option value="all">Все ниши</option></select>
+            </div>
+            <button type="button" class="btn btn-secondary btn-reset" id="feed-reset">Сбросить</button>
+          </div>
+          <div class="presets" id="feed-chips" role="group" aria-label="Площадка" style="margin-top: 16px;"></div>
+          <p class="meta" style="margin: 14px 0 0;">Группы площадок ниже подстраиваются под выбранную нишу автоматически.</p>
+        </div>
+
+        <p class="meta" id="feed-count" aria-live="polite" style="margin-top: 20px;"></p>
+        <div class="feed-list" id="feed-grid"></div>
+
+        <div class="empty" id="feed-empty" hidden>
+          <h3>Заявок пока нет</h3>
+          <p class="lead" style="margin: 8px auto 20px; font-size: 15px;">По этим фильтрам объявлений нет. Сбросьте фильтры или добавьте заявки в базу — лента подтянет их сама.</p>
+          <button type="button" class="btn btn-secondary" id="feed-reset2">Сбросить фильтры</button>
+        </div>
+
+        <div class="card" style="margin-top: var(--gap-xl);">
+          <h3 style="margin-bottom: 10px;">Где искать клиентов по выбранной нише</h3>
+          <p class="meta" style="margin: 0 0 6px;">Ссылки открывают живые поиски на площадках — один клик, запрос уже подставлен. Меняете нишу — обновляются сами.</p>
+          <div id="feed-groups"></div>
+        </div>
+
+        <p class="meta" style="margin-top: 16px;">Наполнение: в базе есть поле <span class="num">listings</span> — добавьте туда заявку (площадка, заголовок, город, дата, ссылка), и она появится здесь сама при автопроверке. Демо-записи открывают живой поиск площадки.</p>
+      </div>
+    </section>
+    <section class="section" data-od-id="next-step">
+      <div class="container">
+        <div class="next-card">
+          <span class="meta">Следующий шаг</span>
+          <h3>Реклама и продвижение</h3>
+          <p>Бенчмарки Яндекс.Директа, чек-лист запуска и доработки сайта.</p>
+          <div class="row"><a class="btn btn-primary" href="ads.html">Перейти к шагу</a><a class="btn btn-secondary" href="index.html">Вернуться в начало</a></div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+<footer class="pagefoot" data-od-id="footer">
+    <div class="container">
+      <div class="row-between">
+        <span>© НишаБух · 2026</span>
+        <span class="meta">Навигатор для свободных бухгалтеров</span>
+      </div>
+      <hr class="rule" style="margin: 20px 0;" />
+      <p style="margin: 0 0 10px; max-width: 90ch;">Прототип-навигатор с демо-базой: оценки ниш — экспертные, для сравнения вариантов. Ссылки в карточках ниш открывают живой поиск на сторонних площадках — НишаБух не публикует и не агрегирует их данные автоматически; соблюдаете правила площадок. Условия партнёрских программ проверены по открытым источникам 12.09.2026 (kontur.ru, moedelo.org, tbank.ru, tochka.com, partners.1cfresh.com, modulbank.ru, knopka.com, skillbox.ru; вторичные: audit-it.ru, klerk.ru, t-j.ru, banki.ru, pampadu.ru) — перед подключением проверяйте актуальные условия в оферте партнёра. Партнёрский доход подлежит налогообложению.</p>
+      <p style="margin: 0; max-width: 90ch;">Онлайн-синхронизация базы работает автоматически: при открытии страницы и далее каждые 10 минут сайт сам запрашивает nishabuh-data.json (или интернет-адрес из параметра ?data=); в офлайне повторы идут без кнопок — подробности в README.</p>
+    </div>
+  </footer>
+  </div>
+</div>
+<a class="to-top" href="#top" aria-label="Наверх">↑</a>
+<script src="app.js"></script>
+</body>
+</html>

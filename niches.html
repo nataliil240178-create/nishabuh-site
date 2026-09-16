@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f2f2f2" />
+  <title>Нишедатель · НишаБух</title>
+  <meta name="description" content="Рейтинг ниш с настраиваемыми весами и автоматические цифры спроса." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="niches">
+<header class="nav2 mob-only" id="top">
+  <div class="container nav2-top">
+    <a class="side-logo" href="index.html">НишаБух</a>
+    <nav class="nav2-depts" aria-label="Отделы сайта"><a class="dept-btn active" href="start.html" aria-current="true">Ниша</a><a class="dept-btn" href="offer.html">Упаковка</a><a class="dept-btn" href="feed.html">Привлечение</a><a class="dept-btn" href="plan.html">Работа</a></nav>
+    <span class="nav2-status"><span class="rate-dot js-sync-dot" title="Состояние автосинхронизации"></span></span>
+  </div>
+  <div class="container"><nav class="nav2-sections" aria-label="Разделы отдела «Ниша»"><span class="sec-label">Разделы отдела</span><a class="sec-link" href="start.html"><span class="sec-num">1</span>Старт с нуля</a><a class="sec-link active" href="niches.html" aria-current="page"><span class="sec-num">2</span>Нишедатель</a></nav></div>
+</header>
+
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar" aria-label="Отделы и разделы">
+    <a class="side-logo" href="index.html">НишаБух</a>
+    <span class="side-tag meta">навигатор для свободных бухгалтеров</span>
+    <nav class="side-nav" aria-label="Отделы сайта"><details class="side-group" name="side-nav" open><summary class="side-dept"><span>Ниша</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="start.html"><span class="num-badge">1</span>Старт с нуля</a><a class="side-sec active" href="niches.html" aria-current="page"><span class="num-badge">2</span>Нишедатель</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Упаковка</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="offer.html"><span class="num-badge">1</span>Конструктор оффера</a><a class="side-sec" href="bots.html"><span class="num-badge">2</span>Боты и воронки</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Привлечение</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="feed.html"><span class="num-badge">1</span>Заявки</a><a class="side-sec" href="ads.html"><span class="num-badge">2</span>Реклама и продвижение</a><a class="side-sec" href="partners.html"><span class="num-badge">3</span>Партнёрки</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Работа</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="plan.html"><span class="num-badge">1</span>План 30 дней</a></div></details></nav>
+    <div class="side-foot">
+      <div class="row" style="gap: 8px;"><span class="rate-dot js-sync-dot" title="Состояние автосинхронизации"></span></div>
+    </div>
+  </aside>
+
+  <div class="content">
+    <main id="content">
+      <div class="container"><nav class="crumbs" aria-label="Вы находитесь здесь"><span>Ниша</span> <span class="sep" aria-hidden="true">→</span> <span aria-current="page">Нишедатель</span></nav></div>
+      <div class="container"><div class="page-purpose"><p class="pp-text">14 ниш по рейтингу. Нажмите «Открыть нишу» — увидите спрос, услуги и цены этой ниши.</p><a class="btn btn-primary btn-sm" href="#niche-grid">Смотреть ниши</a></div></div>
+<section class="section" id="niches" data-od-id="niches">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Ниша · поиск и рейтинг</p>
+          <h2>Найдите нишу по рейтингу — и настройте рейтинг под себя</h2>
+          <p class="lead" style="margin-top: 16px;">Каждая ниша оценена по шести критериям от 1 до 5. Выберите готовый профиль весов или двигайте ползунки — рейтинг пересчитывается сразу. Кнопка «Открыть нишу» покажет источники и поиск клиентов.</p>
+        </div>
+
+        <details class="filters"><summary>Настроить фильтры и веса — необязательно</summary>
+        <div class="card" style="margin-bottom: 8px;">
+          <div class="controls">
+            <div class="field grow">
+              <label for="niche-search">Поиск по нишам</label>
+              <input class="input" type="search" id="niche-search" placeholder="например, маркетплейсы" />
+            </div>
+            <div class="field seg-field">
+              <label id="client-label">Тип клиента</label>
+              <div class="seg" id="niche-client" role="group" aria-labelledby="client-label">
+                <button type="button" data-client="all" aria-pressed="true">Все</button>
+                <button type="button" data-client="ip" aria-pressed="false">ИП и самозанятые</button>
+                <button type="button" data-client="ooo" aria-pressed="false">ООО и юрлица</button>
+              </div>
+            </div>
+            <div class="field">
+              <label for="niche-sphere">Сфера</label>
+              <select class="input" id="niche-sphere"><option value="all">Все сферы</option></select>
+            </div>
+            <div class="field">
+              <label for="niche-sort">Сортировка</label>
+              <select class="input" id="niche-sort">
+                <option value="rating">По рейтингу</option>
+                <option value="check">По чеку</option>
+                <option value="demand">По спросу</option>
+              </select>
+            </div>
+            <button type="button" class="btn btn-secondary btn-reset" id="reset-all">Сбросить всё</button>
+          </div>
+
+          <div class="row-between" style="margin-top: 20px; flex-wrap: wrap; gap: 12px;">
+            <h3 style="font-size: 16px;">Веса критериев рейтинга</h3>
+            <button type="button" class="btn btn-secondary btn-sm" id="weights-reset">Сбросить веса</button>
+          </div>
+          <p class="meta" style="margin-top: 4px;">Профиль — готовый набор весов под вашу цель. Ваш выбор сохраняется в браузере и переживёт перезагрузку.</p>
+          <div class="presets" role="group" aria-label="Готовые профили весов">
+            <button type="button" class="preset" data-preset="income" aria-pressed="false">Максимум дохода</button>
+            <button type="button" class="preset" data-preset="fast" aria-pressed="false">Быстрый старт</button>
+            <button type="button" class="preset" data-preset="lowcomp" aria-pressed="false">Меньше конкуренции</button>
+            <button type="button" class="preset" data-preset="remote" aria-pressed="false">Только удалёнка</button>
+          </div>
+          <div class="weights">
+            <div class="weight-row">
+              <label for="w-demand">Спрос</label>
+              <input type="range" id="w-demand" data-k="demand" min="0" max="50" step="5" value="30" />
+              <output class="w-out num" data-k="demand">30%</output>
+            </div>
+            <div class="weight-row">
+              <label for="w-competition">Конкуренция</label>
+              <input type="range" id="w-competition" data-k="competition" min="0" max="50" step="5" value="15" />
+              <output class="w-out num" data-k="competition">15%</output>
+            </div>
+            <div class="weight-row">
+              <label for="w-check">Чек</label>
+              <input type="range" id="w-check" data-k="check" min="0" max="50" step="5" value="25" />
+              <output class="w-out num" data-k="check">25%</output>
+            </div>
+            <div class="weight-row">
+              <label for="w-recurring">Повторяемость</label>
+              <input type="range" id="w-recurring" data-k="recurring" min="0" max="50" step="5" value="20" />
+              <output class="w-out num" data-k="recurring">20%</output>
+            </div>
+            <div class="weight-row">
+              <label for="w-entry">Лёгкий вход</label>
+              <input type="range" id="w-entry" data-k="entry" min="0" max="50" step="5" value="5" />
+              <output class="w-out num" data-k="entry">5%</output>
+            </div>
+            <div class="weight-row">
+              <label for="w-remote">Удалёнка</label>
+              <input type="range" id="w-remote" data-k="remote" min="0" max="50" step="5" value="5" />
+              <output class="w-out num" data-k="remote">5%</output>
+            </div>
+          </div>
+        </div></details>
+
+        <div class="row-between" style="margin-top: 20px; flex-wrap: wrap; gap: 8px;">
+          <div>
+            <p class="meta" id="niche-count" aria-live="polite" style="margin: 0;"></p>
+            <p class="meta" style="margin: 4px 0 0;">Полоски в карточках — оценки: спрос · конкуренция · чек · повторяемость · лёгкий вход · удалёнка.</p>
+          </div>
+          </div>
+
+        <div class="niche-grid" id="niche-grid"></div>
+
+        <div class="empty" id="niche-empty" hidden>
+          <h3>Ничего не найдено</h3>
+          <p class="lead" style="margin: 8px auto 20px; font-size: 15px;">По этим фильтрам ниш нет. Попробуйте очистить поиск или сбросить фильтры.</p>
+          <button type="button" class="btn btn-secondary" id="niche-reset">Сбросить фильтры</button>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="method" data-od-id="method">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Методика</p>
+          <h2>Как считается рейтинг ниши и как проверять спрос онлайн</h2>
+          <p class="lead" style="margin-top: 16px;">Формула открыта — вы всегда видите, откуда цифра. Спрос виден автоматически: в карточке каждой ниши и в её окне — показы в поиске, динамика, вакансии и заявки, без ручных проверок.</p>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <p class="out-label">Формула</p>
+            <p class="num" style="font-size: 18px; margin: 4px 0 16px;">Рейтинг = Σ(оценка × вес) ÷ 5 × 10</p>
+            <p class="niche-note" style="margin-top: 0;">Оценки 1–5 выставлены экспертно для демо-базы. Веса — ваши ползунки и профили: рейтинг меняется мгновенно. Добавляя свои ниши, оценивайте их по той же шкале — рейтинг получится сравнимым.</p>
+          </div>
+          <div class="card" style="padding: 12px 20px;">
+            <table class="ds-table">
+              <thead>
+                <tr><th>Критерий</th><th>Что оценивает</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>Спрос</td><td>сколько потенциальных клиентов в нише</td></tr>
+                <tr><td>Конкуренция</td><td>насколько плотно предложение бухгалтерских услуг</td></tr>
+                <tr><td>Чек</td><td>сколько клиент готов платить за ведение</td></tr>
+                <tr><td>Повторяемость</td><td>абонементы и продления — доход каждый месяц</td></tr>
+                <tr><td>Лёгкий вход</td><td>как быстро появятся первые клиенты</td></tr>
+                <tr><td>Удалёнка</td><td>можно ли вести без выезда к клиенту</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" data-od-id="next-step">
+      <div class="container">
+        <div class="next-card">
+          <span class="meta">Следующий шаг</span>
+          <h3>Конструктор оффера</h3>
+          <p>Заголовок, оффер и лид-магнит под выбранную нишу — за минуту.</p>
+          <div class="row"><a class="btn btn-primary" href="offer.html">Перейти к шагу</a><a class="btn btn-secondary" href="index.html">Вернуться в начало</a></div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+<footer class="pagefoot" data-od-id="footer">
+    <div class="container">
+      <div class="row-between">
+        <span>© НишаБух · 2026</span>
+        <span class="meta">Навигатор для свободных бухгалтеров</span>
+      </div>
+      <hr class="rule" style="margin: 20px 0;" />
+      <p style="margin: 0 0 10px; max-width: 90ch;">Прототип-навигатор с демо-базой: оценки ниш — экспертные, для сравнения вариантов. Ссылки в карточках ниш открывают живой поиск на сторонних площадках — НишаБух не публикует и не агрегирует их данные автоматически; соблюдаете правила площадок. Условия партнёрских программ проверены по открытым источникам 12.09.2026 (kontur.ru, moedelo.org, tbank.ru, tochka.com, partners.1cfresh.com, modulbank.ru, knopka.com, skillbox.ru; вторичные: audit-it.ru, klerk.ru, t-j.ru, banki.ru, pampadu.ru) — перед подключением проверяйте актуальные условия в оферте партнёра. Партнёрский доход подлежит налогообложению.</p>
+      <p style="margin: 0; max-width: 90ch;">Онлайн-синхронизация базы работает автоматически: при открытии страницы и далее каждые 10 минут сайт сам запрашивает nishabuh-data.json (или интернет-адрес из параметра ?data=); в офлайне повторы идут без кнопок — подробности в README.</p>
+    </div>
+  </footer>
+  </div>
+</div>
+<div class="modal-overlay" id="niche-modal" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="nm-title">
+      <div class="row-between" style="margin-bottom: 8px; align-items: flex-start;">
+        <h3 id="nm-title" style="font-size: 24px; margin: 0;"></h3>
+        <button type="button" class="modal-close" id="nm-close" aria-label="Закрыть карточку ниши">×</button>
+      </div>
+      <p class="meta" id="nm-sub" style="margin: 0 0 8px;"></p>
+      <div id="nm-body"></div>
+    </div>
+  </div>
+<a class="to-top" href="#top" aria-label="Наверх">↑</a>
+<script src="app.js"></script>
+</body>
+</html>

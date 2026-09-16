@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f2f2f2" />
+  <title>Конструктор оффера · НишаБух</title>
+  <meta name="description" content="Оффер и лид-магнит под нишу за минуту." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="offer">
+<header class="nav2 mob-only" id="top">
+  <div class="container nav2-top">
+    <a class="side-logo" href="index.html">НишаБух</a>
+    <nav class="nav2-depts" aria-label="Отделы сайта"><a class="dept-btn" href="start.html">Ниша</a><a class="dept-btn active" href="offer.html" aria-current="true">Упаковка</a><a class="dept-btn" href="feed.html">Привлечение</a><a class="dept-btn" href="plan.html">Работа</a></nav>
+    <span class="nav2-status"><span class="rate-dot js-sync-dot" title="Состояние автосинхронизации"></span></span>
+  </div>
+  <div class="container"><nav class="nav2-sections" aria-label="Разделы отдела «Упаковка»"><span class="sec-label">Разделы отдела</span><a class="sec-link active" href="offer.html" aria-current="page"><span class="sec-num">1</span>Конструктор оффера</a><a class="sec-link" href="bots.html"><span class="sec-num">2</span>Боты и воронки</a></nav></div>
+</header>
+
+
+<div class="layout">
+  <aside class="sidebar" id="sidebar" aria-label="Отделы и разделы">
+    <a class="side-logo" href="index.html">НишаБух</a>
+    <span class="side-tag meta">навигатор для свободных бухгалтеров</span>
+    <nav class="side-nav" aria-label="Отделы сайта"><details class="side-group" name="side-nav"><summary class="side-dept"><span>Ниша</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="start.html"><span class="num-badge">1</span>Старт с нуля</a><a class="side-sec" href="niches.html"><span class="num-badge">2</span>Нишедатель</a></div></details><details class="side-group" name="side-nav" open><summary class="side-dept"><span>Упаковка</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec active" href="offer.html" aria-current="page"><span class="num-badge">1</span>Конструктор оффера</a><a class="side-sec" href="bots.html"><span class="num-badge">2</span>Боты и воронки</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Привлечение</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="feed.html"><span class="num-badge">1</span>Заявки</a><a class="side-sec" href="ads.html"><span class="num-badge">2</span>Реклама и продвижение</a><a class="side-sec" href="partners.html"><span class="num-badge">3</span>Партнёрки</a></div></details><details class="side-group" name="side-nav"><summary class="side-dept"><span>Работа</span><span class="chev" aria-hidden="true"></span></summary><div class="side-sections"><a class="side-sec" href="plan.html"><span class="num-badge">1</span>План 30 дней</a></div></details></nav>
+    <div class="side-foot">
+      <div class="row" style="gap: 8px;"><span class="rate-dot js-sync-dot" title="Состояние автосинхронизации"></span></div>
+    </div>
+  </aside>
+
+  <div class="content">
+    <main id="content">
+      <div class="container"><nav class="crumbs" aria-label="Вы находитесь здесь"><span>Упаковка</span> <span class="sep" aria-hidden="true">→</span> <span aria-current="page">Конструктор оффера</span></nav></div>
+      <div class="container"><div class="page-purpose"><p class="pp-text">Выберите нишу — получите готовый заголовок, оффер, лид-магнит и цены. Скопируйте одной кнопкой.</p><a class="btn btn-primary btn-sm" href="#offer">Открыть конструктор</a></div></div>
+<section class="section" id="offer" data-od-id="offer">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Упаковка · оффер</p>
+          <h2>Соберите оффер под выбранную нишу за минуту</h2>
+          <p class="lead" style="margin-top: 16px;">Выберите нишу — конструктор соберёт заголовок для лендинга, оффер, лид-магнит, услуги с ценами и каналы привлечения. Скопируйте — первый экран воронки готов.</p>
+        </div>
+        <div class="ctor-grid">
+          <div class="card">
+            <div class="field" style="margin-bottom: 16px;">
+              <label for="ctor-niche">Ниша</label>
+              <select class="input" id="ctor-niche"></select>
+            </div>
+            <p class="niche-note" style="margin-top: 0;">Оффер собран из данных нишедателя: те же боли, услуги и цены, что в карточках. В карточке каждой ниши есть кнопка «Собрать оффер» — она подставит нишу сюда автоматически.</p>
+            <button type="button" class="btn btn-primary" id="ctor-copy" aria-live="polite">Скопировать оффер</button>
+          </div>
+          <div class="card ctor-out">
+            <div class="out-row">
+              <p class="out-label">Заголовок для лендинга</p>
+              <p class="out-val" id="ctor-hook"></p>
+            </div>
+            <div class="out-row">
+              <p class="out-label">Оффер</p>
+              <p class="out-val" id="ctor-offer"></p>
+            </div>
+            <div class="out-row">
+              <p class="out-label">Лид-магнит</p>
+              <p class="out-val" id="ctor-lead"></p>
+            </div>
+            <div class="out-row">
+              <p class="out-label">Услуги и цены</p>
+              <ul class="svc" id="ctor-svc"></ul>
+            </div>
+            <div class="out-row">
+              <p class="out-label">Каналы привлечения</p>
+              <p class="out-val" id="ctor-channels"></p>
+            </div>
+            <div class="out-row">
+              <p class="out-label">Совет по нише</p>
+              <p class="out-val" id="ctor-note" style="color: var(--muted); font-size: 14px;"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" data-od-id="next-step">
+      <div class="container">
+        <div class="next-card">
+          <span class="meta">Следующий шаг</span>
+          <h3>Боты и воронки</h3>
+          <p>Мессенджеры, подключение бота, настройки — и пять шагов воронки.</p>
+          <div class="row"><a class="btn btn-primary" href="bots.html">Перейти к шагу</a><a class="btn btn-secondary" href="index.html">Вернуться в начало</a></div>
+        </div>
+      </div>
+    </section>
+
+    </main>
+<footer class="pagefoot" data-od-id="footer">
+    <div class="container">
+      <div class="row-between">
+        <span>© НишаБух · 2026</span>
+        <span class="meta">Навигатор для свободных бухгалтеров</span>
+      </div>
+      <hr class="rule" style="margin: 20px 0;" />
+      <p style="margin: 0 0 10px; max-width: 90ch;">Прототип-навигатор с демо-базой: оценки ниш — экспертные, для сравнения вариантов. Ссылки в карточках ниш открывают живой поиск на сторонних площадках — НишаБух не публикует и не агрегирует их данные автоматически; соблюдаете правила площадок. Условия партнёрских программ проверены по открытым источникам 12.09.2026 (kontur.ru, moedelo.org, tbank.ru, tochka.com, partners.1cfresh.com, modulbank.ru, knopka.com, skillbox.ru; вторичные: audit-it.ru, klerk.ru, t-j.ru, banki.ru, pampadu.ru) — перед подключением проверяйте актуальные условия в оферте партнёра. Партнёрский доход подлежит налогообложению.</p>
+      <p style="margin: 0; max-width: 90ch;">Онлайн-синхронизация базы работает автоматически: при открытии страницы и далее каждые 10 минут сайт сам запрашивает nishabuh-data.json (или интернет-адрес из параметра ?data=); в офлайне повторы идут без кнопок — подробности в README.</p>
+    </div>
+  </footer>
+  </div>
+</div>
+<a class="to-top" href="#top" aria-label="Наверх">↑</a>
+<script src="app.js"></script>
+</body>
+</html>
