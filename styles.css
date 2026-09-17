@@ -917,3 +917,11 @@
 .pack-tech { margin-top: 14px; border-top: 1px dashed var(--border, #e2e5ea); padding-top: 10px; }
 .pack-tech summary { cursor: pointer; font-size: 14px; color: var(--muted, #667); }
 .pack-json { white-space: pre-wrap; word-break: break-word; font-size: 12px; max-height: 320px; overflow: auto; margin: 10px 0 6px; }
+
+/* ── карточка ниши: блоки по направлениям ─────────────────── */
+.dir-block { border: 1px solid var(--border, #e2e5ea); border-radius: 12px; padding: 14px 16px; margin: 14px 0; background: #fff; }
+.dir-block.d1 { border-left: 4px solid var(--accent, #16b7a9); }
+.dir-block.d2 { border-left: 4px solid #4a6cf7; }
+.dir-badge { font-family: var(--mono, monospace); font-size: 11.5px; letter-spacing: .05em; text-transform: uppercase; margin: 0 0 10px; color: var(--muted, #667); }
+.dir-block.d1 .dir-badge { color: #0f7a71; }
+.dir-block.d2 .dir-badge { color: #3b57c7; }

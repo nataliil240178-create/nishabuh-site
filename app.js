@@ -840,18 +840,29 @@
       html += '<div class="row" style="gap: 10px; flex-wrap: wrap; margin-bottom: 6px;">' +
         '<span class="rate-pill num"><span class="rate-dot ' + t + '"></span>' + r.toFixed(1).replace('.', ',') + '<span class="pill-tier">' + TIER_LABEL[t] + '</span></span>' +
         '<span class="meta">рейтинг при ваших текущих весах</span></div>';
+      html += '<div class="dir-block"><p class="dir-badge">Общее для обоих направлений</p>';
       html += '<p class="niche-label">Что болит у клиента</p><div class="pain-tags">' + pains + '</div>';
-      html += '<p class="niche-label">Что продавать</p><ul class="svc">' + svc + '</ul>';
-      html += '<p class="niche-label">Лид-магнит</p><p class="niche-lead">' + esc(n.lead) + '</p>';
-      html += '<p class="niche-note"><strong>Совет:</strong> ' + esc(n.note) + '</p>';
-
       html += demandPanel(n);
+      html += '</div>';
 
-      html += '<p class="niche-label" style="margin-top: 24px;">Партнёрки, подходящие к этой нише</p>';
+      html += '<div class="dir-block d1"><p class="dir-badge">Направление 1 · ищу клиентов сам</p>';
+      html += '<p class="niche-label">Что продавать этой нише</p><ul class="svc">' + svc + '</ul>';
+      html += '<p class="niche-label">Подарок за контакт (лид-магнит)</p><p class="niche-lead">' + esc(n.lead) + '</p>';
+      html += '<p class="niche-note"><strong>Совет:</strong> ' + esc(n.note) + '</p>';
+      if (n.phrase1) { html += '<p class="niche-label">С чего начать разговор</p><p class="niche-lead">' + esc(n.phrase1) + '</p>'; }
+      html += '</div>';
+
+      html += '<div class="dir-block d2"><p class="dir-badge">Направление 2 · заработок на партнёрках</p>';
+      html += '<p class="niche-label">Партнёрки, подходящие к этой нише</p>';
       partnersFor(n).forEach(function (p) {
         html += '<div class="src-link"><span>' + esc(p.name) + ' — ' + esc(p.rate) + '</span>' +
           '<a class="p-link" style="margin: 0;" href="' + p.url + '" target="_blank" rel="noopener">' + esc(p.urlLabel) + ' ↗</a></div>';
       });
+      if (n.phrase) {
+        html += '<p class="niche-label">С чего начать разговор</p><p class="niche-lead">' + esc(n.phrase) + '</p>';
+      }
+      html += '<p class="meta">Каталог всех программ — в разделе <a href="partners.html">«Партнёрки»</a>.</p>';
+      html += '</div>';
 
       html += '<p class="niche-label" style="margin-top: 24px;">Выберите путь — что будете делать в этой нише</p>';
       html += '<div class="niche-cta">' +
