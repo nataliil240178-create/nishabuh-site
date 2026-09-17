@@ -935,3 +935,15 @@
 /* ── карточка ниши: на этом этапе оставляем только два способа заработка ── */
 #nm-body .niche-cta a[href^="offer.html"],
 #nm-body .niche-cta a[href^="feed.html"] { display: none; }
+
+/* ── боли в карточке: раскрывающиеся строки ───────────────── */
+.pain-acc { margin: 6px 0 0; }
+.pain-item { border: 1px solid var(--border, #e2e5ea); border-radius: 10px; margin: 6px 0; background: #fff; overflow: hidden; }
+.pain-item > summary { cursor: pointer; padding: 10px 13px; font-size: 15px; font-weight: 600; list-style: none; display: flex; align-items: center; gap: 8px; }
+.pain-item > summary::-webkit-details-marker { display: none; }
+.pain-item > summary::before { content: "+"; font-family: var(--mono, monospace); color: var(--accent, #16b7a9); font-weight: 700; }
+.pain-item[open] > summary::before { content: "–"; }
+.pain-item[open] > summary { background: #f6fbfa; }
+.pain-body { padding: 0 13px 12px 34px; font-size: 14.5px; }
+.pain-body p { margin: 6px 0; }
+.pain-body .pain-do { color: #0b6b60; }
