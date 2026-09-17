@@ -478,7 +478,7 @@
         return '<li><span>' + esc(s[0]) + '</span><span class="num">' + esc(s[1]) + '</span></li>';
       }).join('');
       var types = n.types.map(function (x) { return x === 'ip' ? 'ИП' : 'ООО'; }).join(' · ');
-      return '<article class="card niche-card' + (rank === 1 ? ' top1' : '') + '">' +
+      return '<article class="card niche-card' + (rank === 1 ? ' top1' : '') + '" data-open="' + esc(n.id) + '" tabindex="0" role="button" aria-label="Подробнее о нише: ' + esc(n.name) + '">' +
         '<div class="row-between"><span class="row" style="gap:10px; flex-wrap:wrap;"><span class="rate-pill num"><span class="rate-dot ' + t + '"></span>' + r.toFixed(1).replace('.', ',') + '<span class="pill-tier">' + TIER_LABEL[t] + '</span></span>' + badge + '</span><span class="meta">№ ' + rank + '</span></div>' +
         '<h3>' + esc(n.name) + '</h3>' +
         '<p class="niche-client">' + esc(n.clientDesc) + '</p>' +
@@ -492,14 +492,9 @@
         '<p class="niche-label">Лид-магнит</p>' +
         '<p class="niche-lead">' + esc(n.lead) + '</p>' +
         '<p class="niche-note"><strong>Совет:</strong> ' + esc(n.note) + '</p>' +
-        '<p class="dir-hint">Как зарабатывать: <b>1</b> — продаю свои услуги, <b>2</b> — привожу клиентов партнёрам</p>' +
         '<div class="niche-cta">' +
         '<a class="btn btn-primary btn-sm" href="napravlenie-1.html?niche=' + esc(n.id) + '"><span class="dir-num">1</span>Сам ищу клиентов</a>' +
         '<a class="btn btn-ink btn-sm" href="napravlenie-2.html?niche=' + esc(n.id) + '"><span class="dir-num">2</span>Заработок на партнёрках</a>' +
-        '</div>' +
-        '<div class="niche-cta" style="margin-top:8px">' +
-        '<button type="button" class="btn btn-secondary btn-sm" data-open="' + esc(n.id) + '">Подробнее о нише</button>' +
-        '<a class="btn btn-secondary btn-sm" href="offer.html" data-niche="' + esc(n.id) + '">Собрать оффер</a>' +
         '</div>' +
         '</article>';
     }
@@ -1586,6 +1581,25 @@
         return '<details class="pain-item"><summary>' + esc(h.pain) + '</summary><div class="pain-body">' + body + '</div></details>';
       }).join('');
     }
+    function wireNicheCards() {
+      if (window.__nicheCardClick) return;
+      window.__nicheCardClick = true;
+      document.addEventListener('click', function (e) {
+        var card = e.target.closest ? e.target.closest('.niche-card') : null;
+        if (!card) return;
+        if (e.target.closest('a, button, details, summary, .pain-item')) return;
+        var id = card.getAttribute('data-open');
+        if (id) openNiche(id);
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key !== 'Enter' && e.key !== ' ') return;
+        var card = e.target.classList && e.target.classList.contains('niche-card') ? e.target : null;
+        if (!card) return;
+        e.preventDefault();
+        var id = card.getAttribute('data-open');
+        if (id) openNiche(id);
+      });
+    }
 function init() {
       var page = document.body.getAttribute('data-page') || 'index';
       applyAppearance();
@@ -1622,6 +1636,7 @@ function init() {
       if (page === 'start') {
         wireStart();
       wireDirections();
+      wireNicheCards();
       }
 
       /* автосинхронизация базы: без кнопок, общая для всех страниц */
