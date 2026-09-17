@@ -931,3 +931,7 @@
 .btn-ink .dir-num { background: rgba(255,255,255,.25); }
 .dir-hint { font-size: 14px; color: var(--muted, #667); margin: 12px 0 8px; }
 .dir-hint b { font-family: var(--mono, monospace); }
+
+/* ── карточка ниши: на этом этапе оставляем только два способа заработка ── */
+#nm-body .niche-cta a[href^="offer.html"],
+#nm-body .niche-cta a[href^="feed.html"] { display: none; }
