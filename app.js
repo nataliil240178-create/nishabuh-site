@@ -492,9 +492,14 @@
         '<p class="niche-label">Лид-магнит</p>' +
         '<p class="niche-lead">' + esc(n.lead) + '</p>' +
         '<p class="niche-note"><strong>Совет:</strong> ' + esc(n.note) + '</p>' +
+        '<p class="dir-hint">Выберите направление: <b>1</b> — продаю свои услуги, <b>2</b> — привожу клиентов партнёрам</p>' +
         '<div class="niche-cta">' +
-        '<button type="button" class="btn btn-ink btn-sm" data-open="' + esc(n.id) + '">Открыть нишу</button>' +
-        '<a class="btn btn-secondary btn-sm btn-arrow" href="offer.html" data-niche="' + esc(n.id) + '">Собрать оффер</a>' +
+        '<a class="btn btn-primary btn-sm" href="napravlenie-1.html?niche=' + esc(n.id) + '"><span class="dir-num">1</span>Сам ищу клиентов</a>' +
+        '<a class="btn btn-ink btn-sm" href="napravlenie-2.html?niche=' + esc(n.id) + '"><span class="dir-num">2</span>Заработок на партнёрках</a>' +
+        '</div>' +
+        '<div class="niche-cta" style="margin-top:8px">' +
+        '<button type="button" class="btn btn-secondary btn-sm" data-open="' + esc(n.id) + '">Подробнее о нише</button>' +
+        '<a class="btn btn-secondary btn-sm" href="offer.html" data-niche="' + esc(n.id) + '">Собрать оффер</a>' +
         '</div>' +
         '</article>';
     }
@@ -866,9 +871,10 @@
 
       html += '<p class="niche-label" style="margin-top: 24px;">Выберите путь — что будете делать в этой нише</p>';
       html += '<div class="niche-cta">' +
-        '<a class="btn btn-primary btn-sm btn-arrow" href="napravlenie-1.html?niche=' + esc(n.id) + '">Направление 1 · искать клиентов самому</a>' +
-        '<a class="btn btn-ink btn-sm btn-arrow" href="napravlenie-2.html?niche=' + esc(n.id) + '">Направление 2 · заработать на партнёрках</a>' +
-        '</div>';
+        '<a class="btn btn-primary btn-sm btn-arrow" href="napravlenie-1.html?niche=' + esc(n.id) + '"><span class="dir-num">1</span>Сам ищу клиентов</a>' +
+        '<a class="btn btn-ink btn-sm btn-arrow" href="napravlenie-2.html?niche=' + esc(n.id) + '"><span class="dir-num">2</span>Заработок на партнёрках</a>' +
+        '</div>' +
+        '<p class="meta" style="margin-top:6px">1 — продаёте свои услуги и берёте клиента на сопровождение · 2 — приводите клиента партнёрской программе и получаете вознаграждение</p>';
       html += '<div class="niche-cta" style="margin-top: 8px;">' +
         '<a class="btn btn-secondary btn-sm btn-arrow" href="offer.html" data-niche="' + esc(n.id) + '" id="nm-to-offer">Собрать оффер</a>' +
         '<a class="btn btn-secondary btn-sm btn-arrow" href="feed.html" id="nm-to-feed">Заявки по этой нише</a>' +

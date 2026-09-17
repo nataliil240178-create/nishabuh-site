@@ -925,3 +925,9 @@
 .dir-badge { font-family: var(--mono, monospace); font-size: 11.5px; letter-spacing: .05em; text-transform: uppercase; margin: 0 0 10px; color: var(--muted, #667); }
 .dir-block.d1 .dir-badge { color: #0f7a71; }
 .dir-block.d2 .dir-badge { color: #3b57c7; }
+
+/* ── направления: короткие кнопки и подсказки ───────────────── */
+.dir-num { display: inline-grid; place-items: center; width: 18px; height: 18px; border-radius: 50%; background: rgba(255,255,255,.22); font-family: var(--mono, monospace); font-size: 11.5px; margin-right: 7px; vertical-align: 1px; }
+.btn-ink .dir-num { background: rgba(255,255,255,.25); }
+.dir-hint { font-size: 14px; color: var(--muted, #667); margin: 12px 0 8px; }
+.dir-hint b { font-family: var(--mono, monospace); }
