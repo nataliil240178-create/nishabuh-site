@@ -846,7 +846,7 @@
         '<span class="rate-pill num"><span class="rate-dot ' + t + '"></span>' + r.toFixed(1).replace('.', ',') + '<span class="pill-tier">' + TIER_LABEL[t] + '</span></span>' +
         '<span class="meta">рейтинг при ваших текущих весах</span></div>';
       html += '<div class="dir-block"><p class="dir-badge">Общее для обоих способов</p>';
-      html += '<p class="niche-label">Что болит у клиента — нажмите, чтобы понять</p>';
+      html += '<p class="niche-label">Что беспокоит клиента — нажмите, объясню по-человечески</p>';
       html += '<div class="pain-acc">' + painsAcc(n) + '</div>';
       html += demandPanel(n);
       html += '</div>';
@@ -1580,9 +1580,9 @@
       var list = n.painHelp && n.painHelp.length ? n.painHelp : (n.pains || []).map(function (p) { return { pain: p }; });
       return list.map(function (h) {
         var body = '';
-        if (h.means) body += '<p><b>Что это значит.</b> ' + esc(h.means) + '</p>';
-        if (h.risk) body += '<p><b>Чем грозит.</b> ' + esc(h.risk) + '</p>';
-        if (h.action) body += '<p class="pain-do"><b>Что делаем.</b> ' + esc(h.action) + '</p>';
+        if (h.means) body += '<p><b>Что происходит.</b> ' + esc(h.means) + '</p>';
+        if (h.risk) body += '<p><b>Почему это хлопотно.</b> ' + esc(h.risk) + '</p>';
+        if (h.action) body += '<p class="pain-do"><b>Как мы помогаем.</b> ' + esc(h.action) + '</p>';
         return '<details class="pain-item"><summary>' + esc(h.pain) + '</summary><div class="pain-body">' + body + '</div></details>';
       }).join('');
     }
