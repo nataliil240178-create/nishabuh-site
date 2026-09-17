@@ -492,7 +492,7 @@
         '<p class="niche-label">Лид-магнит</p>' +
         '<p class="niche-lead">' + esc(n.lead) + '</p>' +
         '<p class="niche-note"><strong>Совет:</strong> ' + esc(n.note) + '</p>' +
-        '<p class="dir-hint">Выберите направление: <b>1</b> — продаю свои услуги, <b>2</b> — привожу клиентов партнёрам</p>' +
+        '<p class="dir-hint">Как зарабатывать: <b>1</b> — продаю свои услуги, <b>2</b> — привожу клиентов партнёрам</p>' +
         '<div class="niche-cta">' +
         '<a class="btn btn-primary btn-sm" href="napravlenie-1.html?niche=' + esc(n.id) + '"><span class="dir-num">1</span>Сам ищу клиентов</a>' +
         '<a class="btn btn-ink btn-sm" href="napravlenie-2.html?niche=' + esc(n.id) + '"><span class="dir-num">2</span>Заработок на партнёрках</a>' +
@@ -845,19 +845,19 @@
       html += '<div class="row" style="gap: 10px; flex-wrap: wrap; margin-bottom: 6px;">' +
         '<span class="rate-pill num"><span class="rate-dot ' + t + '"></span>' + r.toFixed(1).replace('.', ',') + '<span class="pill-tier">' + TIER_LABEL[t] + '</span></span>' +
         '<span class="meta">рейтинг при ваших текущих весах</span></div>';
-      html += '<div class="dir-block"><p class="dir-badge">Общее для обоих направлений</p>';
+      html += '<div class="dir-block"><p class="dir-badge">Общее для обоих способов</p>';
       html += '<p class="niche-label">Что болит у клиента</p><div class="pain-tags">' + pains + '</div>';
       html += demandPanel(n);
       html += '</div>';
 
-      html += '<div class="dir-block d1"><p class="dir-badge">Направление 1 · ищу клиентов сам</p>';
+      html += '<div class="dir-block d1"><p class="dir-badge">Способ 1 · продаю свои услуги</p>';
       html += '<p class="niche-label">Что продавать этой нише</p><ul class="svc">' + svc + '</ul>';
       html += '<p class="niche-label">Подарок за контакт (лид-магнит)</p><p class="niche-lead">' + esc(n.lead) + '</p>';
       html += '<p class="niche-note"><strong>Совет:</strong> ' + esc(n.note) + '</p>';
       if (n.phrase1) { html += '<p class="niche-label">С чего начать разговор</p><p class="niche-lead">' + esc(n.phrase1) + '</p>'; }
       html += '</div>';
 
-      html += '<div class="dir-block d2"><p class="dir-badge">Направление 2 · заработок на партнёрках</p>';
+      html += '<div class="dir-block d2"><p class="dir-badge">Способ 2 · привожу клиентов партнёрам</p>';
       html += '<p class="niche-label">Партнёрки, подходящие к этой нише</p>';
       partnersFor(n).forEach(function (p) {
         html += '<div class="src-link"><span>' + esc(p.name) + ' — ' + esc(p.rate) + '</span>' +
@@ -875,18 +875,15 @@
         '<a class="btn btn-ink btn-sm btn-arrow" href="napravlenie-2.html?niche=' + esc(n.id) + '"><span class="dir-num">2</span>Заработок на партнёрках</a>' +
         '</div>' +
         '<p class="meta" style="margin-top:6px">1 — продаёте свои услуги и берёте клиента на сопровождение · 2 — приводите клиента партнёрской программе и получаете вознаграждение</p>';
-      html += '<div class="niche-cta" style="margin-top: 8px;">' +
-        '<a class="btn btn-secondary btn-sm btn-arrow" href="offer.html" data-niche="' + esc(n.id) + '" id="nm-to-offer">Собрать оффер</a>' +
-        '<a class="btn btn-secondary btn-sm btn-arrow" href="feed.html" id="nm-to-feed">Заявки по этой нише</a>' +
-        '</div>';
+
 
       $('#nm-body').innerHTML = html;
-      $('#nm-to-offer').addEventListener('click', function () {
+      if ($('#nm-to-offer')) $('#nm-to-offer').addEventListener('click', function () {
         $('#ctor-niche').value = n.id;
         renderOffer();
         closeModal();
       });
-      $('#nm-to-feed').addEventListener('click', function () {
+      if ($('#nm-to-feed')) $('#nm-to-feed').addEventListener('click', function () {
         var fs = $('#feed-niche');
         if (fs) { fs.value = n.id; feedState.niche = n.id; }
         renderFeed();
